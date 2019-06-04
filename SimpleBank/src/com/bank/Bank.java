@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Bank {
 
-    static ArrayList<User> users = new ArrayList<>();
+    public static ArrayList<User> users = new ArrayList<>();
     private static Scanner input = new Scanner(System.in);
     public static void initBank(){
         users.add(new User(1,"Usuario1",1,0.0));
