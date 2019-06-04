@@ -27,11 +27,11 @@ public aspect Aspecto_verifyLogin {
 		 PrintWriter pw = null;
 	        try
 	        {
-	            fichero = new FileWriter(file);
+	            fichero = new FileWriter(file,true);
 	            BufferedWriter bw= new BufferedWriter(fichero);
 	            pw = new PrintWriter(bw);
 
-	            pw.write("Transaccion realizada con exito " + cal.getTime());
+	            pw.println("Transaccion realizada con exito " + cal.getTime());
 	            System.out.println("Transaccion realizda " + cal.getTime());
 
 	        } catch (Exception e) {
