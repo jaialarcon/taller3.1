@@ -2,6 +2,9 @@ import java.io.File;
 import java.util.*;
 import java.io.*;
 public aspect Aspecto_verifyLogin {
+	 
+	File file = new File("log.txt");
+	Calendar cal = Calendar.getInstance();
 	private String nombre;
 	private String cedula; 
     //Aspecto2: El login debe realizarse antes de la transacci�n
@@ -19,9 +22,9 @@ public aspect Aspecto_verifyLogin {
 	}
 	
 	after(): login(){
-		 File file = new File("log.txt");
+		
 		 
-		 Calendar cal = Calendar.getInstance();
+		 
 		 FileWriter fichero = null;
 	     
 		 PrintWriter pw = null;
@@ -29,7 +32,7 @@ public aspect Aspecto_verifyLogin {
 	        {
 	            fichero = new FileWriter(file,true);
 	            BufferedWriter bw= new BufferedWriter(fichero);
-	            pw = new PrintWriter(bw);
+	            pw = new PrintWriter(bw,true);
 
 	            pw.println("Transaccion realizada con exito " + cal.getTime());
 	            System.out.println("Transaccion realizda " + cal.getTime());
